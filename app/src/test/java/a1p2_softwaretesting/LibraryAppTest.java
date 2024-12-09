@@ -10,12 +10,10 @@ import org.junit.jupiter.api.Test;
 public class LibraryAppTest {
     @Test
     public void testLibraryCreation() {
-        var viewMock = mock(LibraryView.class);
-        
-        var sut = new LibraryApp(viewMock);
+        var viewMock = mock(LibraryView.class); // Create a mock object of the LibraryView class
+        var sut = new LibraryApp(viewMock); // Create a new LibraryApp object
 
-        sut.start();
-
-        verify(viewMock).displayWelcomeMessage();
+        sut.start(); // Call the start() method
+        verify(viewMock).displayWelcomeMessage(); // Verify that the displayWelcomeMessage() method was called
     }
 }
