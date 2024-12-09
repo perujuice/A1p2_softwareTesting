@@ -4,8 +4,21 @@ Library Management System (LMS)
 
 
 ## Suggestions:
-- Language of Implementaiton: Java?
-- Framework for unit-testing: JUnit 4?
+- Language of Implementaiton: Java
+- Framework for unit-testing: JUnit Jupiter
+- Framework for mocking: Mockito
+- Jacoco for code coverage
+
+## How to run code coverage:
+- ./gradlew test
+- ./gradlew jacocoTestReport
+- cd app/javacocoHtml
+- start index.html
+
+*The last command will show the code coverage results in the browser* 
+
+![alt text](image.png)
+
 
 ## Application Idea:
 ### Library Management System
