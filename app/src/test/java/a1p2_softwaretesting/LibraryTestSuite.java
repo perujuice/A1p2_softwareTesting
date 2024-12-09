@@ -6,8 +6,7 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectClasses({
-    BookTest.class,  // Make sure this matches the package and class name
-    // Add other test classes here as needed
+    BookTest.class, 
 })
 public class LibraryTestSuite {
     // This class is just a holder for the suite annotations

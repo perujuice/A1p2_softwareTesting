@@ -9,6 +9,21 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
+}
+
+jacoco {
+    toolVersion = "0.8.12" // latest JaCoCo version
+}
+
+jacocoTestReport {
+    dependsOn test // Ensure tests run before generating the report
+
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = file("/jacocoHtml") // HTML report location
+    }
 }
 
 repositories {
