@@ -18,6 +18,6 @@ public class LibraryViewTest {
 
         sut.displayWelcomeMessage();
 
-        verify(outStreamMock).println(sut.WELCOME);
+        verify(outStreamMock).println(LibraryView.WELCOME);
     }
 }

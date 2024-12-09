@@ -4,7 +4,7 @@ import java.io.PrintStream;
 
 public class LibraryView {
     private PrintStream outStream;
-    public String WELCOME = "Welcome to the Library!";
+    public static String WELCOME = "Welcome to the Library!";
 
     public LibraryView(PrintStream outStream) {
         this.outStream = outStream;
@@ -13,5 +13,4 @@ public class LibraryView {
     public void displayWelcomeMessage() {
         outStream.println(WELCOME);
     }
-
 }
