@@ -11,22 +11,21 @@ public class LibraryControllerTest {
     
     @Test
     public void shouldCallAddBookWhenOption1IsSelected() {
-        // Arrange
+
         var libraryMock = mock(Library.class);
         var viewMock = mock(LibraryView.class);
         var sut = new LibraryController(libraryMock, viewMock);
 
         when(viewMock.promptForBookTitle()).thenReturn("Test Title");
         when(viewMock.promptForBookAuthor()).thenReturn("Test Author");
+        when(viewMock.promptForBookYear()).thenReturn("2021");
         when(viewMock.promptForBookIsbn()).thenReturn("1234567890");
 
-        // Act
         sut.handleUserInput("1");
-        sut.addBook();
 
-        // Assert
         verify(viewMock).promptForBookTitle();
         verify(viewMock).promptForBookAuthor();
+        verify(viewMock).promptForBookYear();
         verify(viewMock).promptForBookIsbn();
         verify(libraryMock).addBook(any(Book.class));
     }  

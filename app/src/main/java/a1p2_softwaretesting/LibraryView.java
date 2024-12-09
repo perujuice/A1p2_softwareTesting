@@ -45,23 +45,23 @@ public class LibraryView {
         return scanner.nextLine();
     }
 
-    public Object promptForBookTitle() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'promptForBookTitle'");
+    public String promptForBookTitle() {
+        outStream.print("Enter the title of the book: ");
+        return scanner.nextLine();
     }
 
-    public Object promptForBookAuthor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'promptForBookAuthor'");
+    public String promptForBookAuthor() {
+        outStream.print("Enter the author of the book: ");
+        return scanner.nextLine();
     }
 
-    public Object promptForBookIsbn() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'promptForBookIsbn'");
+    public String promptForBookIsbn() {
+        outStream.print("Enter the ISBN of the book: ");
+        return scanner.nextLine();
     }
 
-    public Object promptForBookYear() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'promptForBookYear'");
+    public String promptForBookYear() {
+        outStream.print("Enter the year of the book: ");
+        return scanner.nextLine();
     }
 }
