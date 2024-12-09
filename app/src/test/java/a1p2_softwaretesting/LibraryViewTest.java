@@ -14,10 +14,10 @@ public class LibraryViewTest {
     public void shouldDisplayWelcomeMessage() {
         PrintStream outStreamMock = mock(PrintStream.class);
 
-        var view = new LibraryView(outStreamMock);
+        var sut = new LibraryView(outStreamMock);
 
-        view.displayWelcomeMessage();
+        sut.displayWelcomeMessage();
 
-        verify(outStreamMock).println("Welcome to the Library!");
+        verify(outStreamMock).println(sut.WELCOME);
     }
 }

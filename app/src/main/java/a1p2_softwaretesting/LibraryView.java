@@ -4,13 +4,14 @@ import java.io.PrintStream;
 
 public class LibraryView {
     private PrintStream outStream;
+    public String WELCOME = "Welcome to the Library!";
 
     public LibraryView(PrintStream outStream) {
         this.outStream = outStream;
     }
 
     public void displayWelcomeMessage() {
-        outStream.println("Welcome to the Library!");
+        outStream.println(WELCOME);
     }
 
 }
