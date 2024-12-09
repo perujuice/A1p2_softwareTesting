@@ -2,9 +2,11 @@ package a1p2_softwaretesting;
 
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Scanner;
 
 public class LibraryView {
     private PrintStream outStream;
+    private Scanner scanner;
     public static String WELCOME = "Welcome to the Library!";
     public static final List<String> MENU_OPTIONS = List.of(
         "Library Management System Menu:",
@@ -22,6 +24,7 @@ public class LibraryView {
 
     public LibraryView(PrintStream outStream) {
         this.outStream = outStream;
+        this.scanner = new Scanner(System.in);
     }
 
     public void displayWelcomeMessage() {
@@ -39,7 +42,6 @@ public class LibraryView {
     }
 
     public String getUserInput() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserInput'");
+        return scanner.nextLine();
     }
 }
