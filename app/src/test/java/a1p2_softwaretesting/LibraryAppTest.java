@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.inOrder;
 
+import java.io.ByteArrayInputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
@@ -47,12 +48,23 @@ public class LibraryAppTest {
 
     @Test
     public void testLibraryAppMain() {
+        // Arrange
+        String simulatedInput = "9\n"; // Simulate user input to exit immediately
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
+
         PrintStream outStreamMock = mock(PrintStream.class); // Create a mock object of the PrintStream class
         PrintStream originalOutStream = System.out; // Save the original output stream
-        var args = new String[0]; // Create an empty array of strings
         System.setOut(outStreamMock); // Set the output stream to the mock object
-        LibraryApp.main(args);
-        verify(outStreamMock).println(LibraryView.WELCOME); // Verify that the welcome message was printed
-        System.setOut(originalOutStream); // Reset the output stream
+
+        // Act
+        LibraryApp.main(new String[0]);
+
+        // Assert
+        verify(outStreamMock).println("Welcome to the Library!"); // Verify that the welcome message was printed
+        verify(outStreamMock).println("Library Management System Menu:"); // Verify that the menu was printed
+        verify(outStreamMock).print("Please choose an option: "); // Verify that the prompt was printed
+
+        // Reset the output stream
+        System.setOut(originalOutStream);
     }
 }
