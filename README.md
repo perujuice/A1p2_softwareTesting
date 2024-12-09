@@ -31,6 +31,9 @@ Library Management System (LMS)
 - Loan: Handles borrowing and returning books.
 - Library: Manages the collection of books and members.
 
+- LibraryApp: where the application runs from
+- LibraryView: creating the console interaction for user
+
 **Example Features:**
 
 - Add/remove books.
