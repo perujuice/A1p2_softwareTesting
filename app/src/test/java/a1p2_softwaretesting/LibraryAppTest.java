@@ -2,8 +2,11 @@ package a1p2_softwaretesting;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.inOrder;
 
+import java.io.ByteArrayInputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
@@ -11,13 +14,15 @@ import org.mockito.InOrder;
 
 
 // Testing the start of the cosnsole application.
+// LibraryApp is like the controller in the MVC pattern.
 public class LibraryAppTest {
 
-    
+
     @Test
     public void shouldShowWelcomeBeforeMenu() {
         var viewMock = mock(LibraryView.class); // Create a mock object of the LibraryView class
-        var sut = new LibraryApp(viewMock); // Create a new LibraryApp object
+        var controllerMock = mock(LibraryController.class); // Create a mock object of the LibraryController class
+        var sut = new LibraryApp(viewMock, controllerMock); // Create a new LibraryApp object
 
         InOrder inOrder = inOrder(viewMock); // Create an InOrder object
         sut.start(); // Call the start() method
@@ -26,6 +31,20 @@ public class LibraryAppTest {
         inOrder.verify(viewMock).displayConsoleMenu(); // Verify that the displayConsoleMenu() method was called
 
         verify(viewMock).displayConsoleMenu(); // Verify that the displayWelcomeMessage() method was called
+    }
+
+    @Test
+    public void testOptionSelection1ByUser() {
+        var viewMock = mock(LibraryView.class); 
+        var controllerMock = mock(LibraryController.class);
+        var sut = new LibraryApp(viewMock, controllerMock); 
+
+        when(viewMock.getUserInput()).thenReturn("1");
+
+        sut.start();
+
+        verify(viewMock).displayWelcomeMessage();
+        verify(controllerMock).handleUserInput("1");
     }
 
     @Test

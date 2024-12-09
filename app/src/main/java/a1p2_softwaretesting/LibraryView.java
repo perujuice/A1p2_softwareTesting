@@ -37,4 +37,9 @@ public class LibraryView {
             }
         }
     }
+
+    public Object getUserInput() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getUserInput'");
+    }
 }
