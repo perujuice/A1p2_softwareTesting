@@ -18,7 +18,8 @@ public class LibraryApp {
 
     public static void main(String[] args) {
         LibraryView view = new LibraryView(System.out);
-        LibraryApp app = new LibraryApp(view, null);
+        LibraryController controller = new LibraryController();
+        LibraryApp app = new LibraryApp(view, controller);
         app.start();
     }
 }
