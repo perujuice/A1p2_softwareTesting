@@ -13,4 +13,9 @@ public class LibraryView {
     public void displayWelcomeMessage() {
         outStream.println(WELCOME);
     }
+
+    public void displayConsoleMenu() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'displayConsoleMenu'");
+    }
 }
