@@ -15,7 +15,16 @@ public class LibraryView {
     }
 
     public void displayConsoleMenu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayConsoleMenu'");
+        outStream.println("Library Management System Menu:");
+        outStream.println("1. Add a book");
+        outStream.println("2. Remove a book");
+        outStream.println("3. Borrow a book");
+        outStream.println("4. Return a book");
+        outStream.println("5. List all books");
+        outStream.println("6. Add a member");
+        outStream.println("7. Remove a member");
+        outStream.println("8. List all members");
+        outStream.println("9. Exit");
+        outStream.print("Please choose an option: ");
     }
 }
