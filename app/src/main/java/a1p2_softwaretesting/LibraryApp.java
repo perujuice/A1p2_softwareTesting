@@ -1,13 +1,13 @@
 package a1p2_softwaretesting;
 
 public class LibraryApp {
+    private LibraryView view;
 
-    public LibraryApp(LibraryView viewMock) {
-        //TODO Auto-generated constructor stub
+    public LibraryApp(LibraryView view) {
+        this.view = view;
     }
 
     public void start() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'start'");
+        this.view.displayWelcomeMessage();
     }
 }
