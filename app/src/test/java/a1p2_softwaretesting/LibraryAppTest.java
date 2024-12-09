@@ -2,30 +2,30 @@ package a1p2_softwaretesting;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.inOrder;
 
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
 
 // Testing the start of the cosnsole application.
 public class LibraryAppTest {
+
+    
     @Test
-    public void startingTheAppShouldShowWelcome() {
+    public void shouldShowWelcomeBeforeMenu() {
         var viewMock = mock(LibraryView.class); // Create a mock object of the LibraryView class
         var sut = new LibraryApp(viewMock); // Create a new LibraryApp object
 
+        InOrder inOrder = inOrder(viewMock); // Create an InOrder object
         sut.start(); // Call the start() method
-        verify(viewMock).displayWelcomeMessage(); // Verify that the displayWelcomeMessage() method was called
-    }
 
-    @Test
-    public void shouldShowConsoleMenu() {
-        var viewMock = mock(LibraryView.class); // Create a mock object of the LibraryView class
-        var sut = new LibraryApp(viewMock); // Create a new LibraryApp object
+        inOrder.verify(viewMock).displayWelcomeMessage(); // Verify that the displayWelcomeMessage() method was called
+        inOrder.verify(viewMock).displayConsoleMenu(); // Verify that the displayConsoleMenu() method was called
 
-        sut.start(); // Call the start() method
-        verify(viewMock).displayConsoleMenu(); 
+        verify(viewMock).displayConsoleMenu(); // Verify that the displayWelcomeMessage() method was called
     }
 
     @Test
