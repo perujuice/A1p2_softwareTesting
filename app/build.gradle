@@ -58,7 +58,7 @@ sourceSets {
 
 application {
     // Define the main class for the application.
-    mainClass = 'a1p2_softwaretesting.Book'
+    mainClass = 'a1p2_softwaretesting.LibraryApp'
 }
 
 tasks.named('test') {
