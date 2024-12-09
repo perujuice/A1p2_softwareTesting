@@ -1,10 +1,24 @@
 package a1p2_softwaretesting;
 
 import java.io.PrintStream;
+import java.util.List;
 
 public class LibraryView {
     private PrintStream outStream;
     public static String WELCOME = "Welcome to the Library!";
+    public static final List<String> MENU_OPTIONS = List.of(
+        "Library Management System Menu:",
+        "1. Add a book",
+        "2. Remove a book",
+        "3. Borrow a book",
+        "4. Return a book",
+        "5. List all books",
+        "6. Add a member",
+        "7. Remove a member",
+        "8. List all members",
+        "9. Exit",
+        "Please choose an option: "
+    );
 
     public LibraryView(PrintStream outStream) {
         this.outStream = outStream;
@@ -15,16 +29,12 @@ public class LibraryView {
     }
 
     public void displayConsoleMenu() {
-        outStream.println("Library Management System Menu:");
-        outStream.println("1. Add a book");
-        outStream.println("2. Remove a book");
-        outStream.println("3. Borrow a book");
-        outStream.println("4. Return a book");
-        outStream.println("5. List all books");
-        outStream.println("6. Add a member");
-        outStream.println("7. Remove a member");
-        outStream.println("8. List all members");
-        outStream.println("9. Exit");
-        outStream.print("Please choose an option: ");
+        for (String option : MENU_OPTIONS) {
+            if (option.equals("Please choose an option: ")) {
+                outStream.print(option);
+            } else {
+                outStream.println(option);
+            }
+        }
     }
 }

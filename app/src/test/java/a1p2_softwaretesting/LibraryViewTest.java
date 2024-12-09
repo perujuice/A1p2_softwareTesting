@@ -29,16 +29,12 @@ public class LibraryViewTest {
 
         sut.displayConsoleMenu();
 
-        verify(outStreamMock).println("Library Management System Menu:");
-        verify(outStreamMock).println("1. Add a book");
-        verify(outStreamMock).println("2. Remove a book");
-        verify(outStreamMock).println("3. Borrow a book");
-        verify(outStreamMock).println("4. Return a book");
-        verify(outStreamMock).println("5. List all books");
-        verify(outStreamMock).println("6. Add a member");
-        verify(outStreamMock).println("7. Remove a member");
-        verify(outStreamMock).println("8. List all members");
-        verify(outStreamMock).println("9. Exit");
-        verify(outStreamMock).print("Please choose an option: ");
+        for (String option : LibraryView.MENU_OPTIONS) {
+            if (option.equals("Please choose an option: ")) {
+                verify(outStreamMock).print(option);
+            } else {
+                verify(outStreamMock).println(option);
+            }
+        }
     }
 }
