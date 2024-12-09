@@ -3,10 +3,8 @@ package a1p2_softwaretesting;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.inOrder;
 
-import java.io.ByteArrayInputStream;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;

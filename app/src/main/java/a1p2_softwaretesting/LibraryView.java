@@ -44,4 +44,24 @@ public class LibraryView {
     public String getUserInput() {
         return scanner.nextLine();
     }
+
+    public Object promptForBookTitle() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'promptForBookTitle'");
+    }
+
+    public Object promptForBookAuthor() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'promptForBookAuthor'");
+    }
+
+    public Object promptForBookIsbn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'promptForBookIsbn'");
+    }
+
+    public Object promptForBookYear() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'promptForBookYear'");
+    }
 }

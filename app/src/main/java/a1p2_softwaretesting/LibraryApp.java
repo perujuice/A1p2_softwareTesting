@@ -18,7 +18,7 @@ public class LibraryApp {
 
     public static void main(String[] args) {
         LibraryView view = new LibraryView(System.out);
-        LibraryController controller = new LibraryController();
+        LibraryController controller = new LibraryController(null, view);
         LibraryApp app = new LibraryApp(view, controller);
         app.start();
     }
