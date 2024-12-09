@@ -10,4 +10,10 @@ public class LibraryApp {
     public void start() {
         this.view.displayWelcomeMessage();
     }
+
+    public static void main(String[] args) {
+        LibraryView view = new LibraryView(System.out);
+        LibraryApp app = new LibraryApp(view);
+        app.start();
+    }
 }
