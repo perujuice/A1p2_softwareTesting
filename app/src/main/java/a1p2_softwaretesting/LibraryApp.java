@@ -9,6 +9,7 @@ public class LibraryApp {
 
     public void start() {
         this.view.displayWelcomeMessage();
+        this.view.displayConsoleMenu();
     }
 
     public static void main(String[] args) {
