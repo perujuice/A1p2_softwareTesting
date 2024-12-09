@@ -2,11 +2,13 @@
 
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Scanner;
 
 public class LibraryView {
     private PrintStream outStream;
-<span class="fc" id="L8">    public static String WELCOME = &quot;Welcome to the Library!&quot;;</span>
-<span class="fc" id="L9">    public static final List&lt;String&gt; MENU_OPTIONS = List.of(</span>
+    private Scanner scanner;
+<span class="fc" id="L10">    public static String WELCOME = &quot;Welcome to the Library!&quot;;</span>
+<span class="fc" id="L11">    public static final List&lt;String&gt; MENU_OPTIONS = List.of(</span>
         &quot;Library Management System Menu:&quot;,
         &quot;1. Add a book&quot;,
         &quot;2. Remove a book&quot;,
@@ -20,22 +22,71 @@ public class LibraryView {
         &quot;Please choose an option: &quot;
     );
 
-<span class="fc" id="L23">    public LibraryView(PrintStream outStream) {</span>
-<span class="fc" id="L24">        this.outStream = outStream;</span>
-<span class="fc" id="L25">    }</span>
+    /*
+     * Constructor for the LibraryView class.
+     */
+<span class="fc" id="L28">    public LibraryView(PrintStream outStream) {</span>
+<span class="fc" id="L29">        this.outStream = outStream;</span>
+<span class="fc" id="L30">        this.scanner = new Scanner(System.in);</span>
+<span class="fc" id="L31">    }</span>
 
+    /*
+     * Display the welcome message.
+     */
     public void displayWelcomeMessage() {
-<span class="fc" id="L28">        outStream.println(WELCOME);</span>
-<span class="fc" id="L29">    }</span>
+<span class="fc" id="L37">        outStream.println(WELCOME);</span>
+<span class="fc" id="L38">    }</span>
 
+    /*
+     * Display the console menu.
+     */
     public void displayConsoleMenu() {
-<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (String option : MENU_OPTIONS) {</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">            if (option.equals(&quot;Please choose an option: &quot;)) {</span>
-<span class="fc" id="L34">                outStream.print(option);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        for (String option : MENU_OPTIONS) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">            if (option.equals(&quot;Please choose an option: &quot;)) {</span>
+<span class="fc" id="L46">                outStream.print(option);</span>
             } else {
-<span class="fc" id="L36">                outStream.println(option);</span>
+<span class="fc" id="L48">                outStream.println(option);</span>
             }
-<span class="fc" id="L38">        }</span>
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L50">        }</span>
+<span class="fc" id="L51">    }</span>
+
+    /* 
+     * Get user input.
+     */
+    public String getUserInput() {
+<span class="fc" id="L57">        return scanner.nextLine();</span>
+    }
+
+    /*
+     * Prompt the user for the title of the book.
+     */
+    public String promptForBookTitle() {
+<span class="nc" id="L64">        outStream.print(&quot;Enter the title of the book: &quot;);</span>
+<span class="nc" id="L65">        return scanner.nextLine();</span>
+    }
+
+    /*
+     * Prompt the user for the author of the book.
+     */
+    public String promptForBookAuthor() {
+<span class="nc" id="L72">        outStream.print(&quot;Enter the author of the book: &quot;);</span>
+<span class="nc" id="L73">        return scanner.nextLine();</span>
+    }
+
+    /*
+     * Prompt the user for the ISBN of the book.
+     */
+    public String promptForBookIsbn() {
+<span class="nc" id="L80">        outStream.print(&quot;Enter the ISBN of the book: &quot;);</span>
+<span class="nc" id="L81">        return scanner.nextLine();</span>
+    }
+
+    /*
+     * Prompt the user for the year of the book.
+     */
+    public String promptForBookYear() {
+<span class="nc" id="L88">        outStream.print(&quot;Enter the year of the book: &quot;);</span>
+<span class="nc" id="L89">        return scanner.nextLine();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
