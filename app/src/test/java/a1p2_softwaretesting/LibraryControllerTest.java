@@ -44,8 +44,9 @@ public void shouldCallRemoveBookWhenOption2IsSelected() {
     // Act
     sut.handleUserInput("2");
 
-    // Verify the correct method was called to remove the book
-    verify(libraryMock).removeBook(any(Book.class));  // Verify the addBook method was called
+        // Assert
+    verify(viewMock).promptForBookTitle();  // Ensure the title was prompted
+    verify(libraryMock).removeBook(any(String.class));
     
 
 }
