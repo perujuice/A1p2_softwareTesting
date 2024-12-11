@@ -20,10 +20,15 @@ public class LibraryController {
             case "1":
                 addBook();
                 break;
+            case "2":
+                removeBook();
+                break;            
             default:
                 break;
         }
     }
+
+
 
 
     /*
@@ -36,5 +41,10 @@ public class LibraryController {
         String year = view.promptForBookYear();
         Book book = new Book(title, author, isbn, year);
         library.addBook(book);
+    }
+
+    private void removeBook() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'removeBook'");
     }
 }

@@ -18,6 +18,7 @@ public class Library {
 
     // Check if a book exists in the library
     public boolean has(Book book) {
+
         boolean contains = books.contains(book);
         return contains;
     }
