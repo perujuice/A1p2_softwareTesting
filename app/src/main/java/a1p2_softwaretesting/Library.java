@@ -24,4 +24,9 @@ public class Library {
       return null; // or throw an exception if you prefer
   }
 
+    public void removeBook(Book any) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'removeBook'");
+    }
+
 }

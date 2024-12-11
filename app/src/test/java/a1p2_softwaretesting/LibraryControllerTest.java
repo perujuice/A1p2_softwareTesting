@@ -30,4 +30,24 @@ public class LibraryControllerTest {
         verify(viewMock).promptForBookIsbn();
         verify(libraryMock).addBook(any(Book.class));
     }  
+
+    @Test
+public void shouldCallRemoveBookWhenOption2IsSelected() {
+    var libraryMock = mock(Library.class);
+    var viewMock = mock(LibraryView.class);
+    var sut = new LibraryController(libraryMock, viewMock);
+    
+    Book mockBook = mock(Book.class);
+    when(viewMock.promptForBookTitle()).thenReturn("Test Title");
+    libraryMock.addBook(mockBook);
+
+    // Act
+    sut.handleUserInput("2");
+
+    // Verify the correct method was called to remove the book
+    verify(libraryMock).removeBook(any(Book.class));  // Verify the addBook method was called
+    
+
+}
+
 }
