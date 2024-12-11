@@ -61,8 +61,8 @@ public class LibraryView {
      * Prompt the user for the title of the book.
      */
     public String promptForBookTitle() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'promptForBookTitle'");
+        outStream.print("Enter the title of the book: ");
+        return scanner.nextLine();
     }
 
     /*

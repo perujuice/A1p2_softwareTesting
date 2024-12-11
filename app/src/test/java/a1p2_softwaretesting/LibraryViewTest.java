@@ -53,12 +53,15 @@ public class LibraryViewTest {
 
     @Test
     public void shouldPromptForRemovingBook() {
+        String simulatedInput = "Test Book Title";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); // Set simulated input.
         PrintStream outStreamMock = mock(PrintStream.class);
-
+    
         var sut = new LibraryView(outStreamMock);
-
+    
         sut.promptForBookTitle();
-
+    
         verify(outStreamMock).print("Enter the title of the book: ");
     }
+    
 }
