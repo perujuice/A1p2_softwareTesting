@@ -51,4 +51,14 @@ public class LibraryViewTest {
         assertEquals(simulatedInput, userInput);
     }
 
+    @Test
+    public void shouldPromptForRemovingBook() {
+        PrintStream outStreamMock = mock(PrintStream.class);
+
+        var sut = new LibraryView(outStreamMock);
+
+        sut.promptForBookTitle();
+
+        verify(outStreamMock).print("Enter the title of the book: ");
+    }
 }
