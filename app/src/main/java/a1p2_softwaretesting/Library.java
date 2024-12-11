@@ -1,15 +1,25 @@
 package a1p2_softwaretesting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Library {
 
-    public void addBook(Book any) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addBook'");
+     private List<Book> books;
+
+    public Library() {
+        this.books = new ArrayList<>();
     }
 
-    public boolean has(Book mockBook) {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'has'");
+    // Add a book to the library
+    public void addBook(Book newBook) {
+        books.add(newBook);
+    }
+
+    // Check if a book exists in the library
+    public boolean has(Book book) {
+        boolean contains = books.contains(book);
+        return contains;
     }
 
 }
