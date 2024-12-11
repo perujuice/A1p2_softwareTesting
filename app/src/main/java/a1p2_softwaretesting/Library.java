@@ -7,4 +7,9 @@ public class Library {
         throw new UnsupportedOperationException("Unimplemented method 'addBook'");
     }
 
+    public boolean has(Book mockBook) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'has'");
+    }
+
 }
