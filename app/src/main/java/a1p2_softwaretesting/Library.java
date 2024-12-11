@@ -17,10 +17,11 @@ public class Library {
     }
 
     // Check if a book exists in the library
-    public boolean has(Book book) {
-
-        boolean contains = books.contains(book);
-        return contains;
-    }
+    public Book has(Book book) {
+      if (books.contains(book)) {
+          return book;
+      }
+      return null; // or throw an exception if you prefer
+  }
 
 }

@@ -20,7 +20,7 @@ public void testAddBook() {
     sut.addBook(mockBook);
 
     // Assert
-    boolean retrievedBook = sut.has(mockBook); // Retrieve the book using has().
+    var retrievedBook = sut.has(mockBook); // Retrieve the book using has().
     assertNotNull(retrievedBook, "Book was not added to the library."); // Assert the book exists.
     assertEquals(mockBook, retrievedBook, "The book returned by has is not the mockBook."); // Assert it matches mockBook.
 }
