@@ -2,29 +2,31 @@ package a1p2_softwaretesting;
 
 public class Book {
 
+    private String title;
+    private String author;
+    private String isbn;
+    private String year;
+
     public Book(String title, String author, String isbn, String year) {
-        //TODO Auto-generated constructor stub
-        // gpt: in a file bookTest.java(give me only the code for this file), give me the minimum test to test the constructor of this class. follow the "sut" pattern
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.year = year;
     }
 
-    public Object getTitle() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTitle'");
+    public String getTitle() {
+        return title;
     }
 
-    public Object getAuthor() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'getAuthor'");
+    public String getAuthor() {
+        return author;
     }
 
-    public Object getIsbn() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'getIsbn'");
+    public String getIsbn() {
+        return isbn;
     }
 
-    public Object getYear() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'getYear'");
+    public String getYear() {
+        return year;
     }
-
 }

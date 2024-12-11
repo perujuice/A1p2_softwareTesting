@@ -18,9 +18,9 @@ public class BookTest {
         var sut = new Book(title, author, isbn, year);
 
         // Assert
-        assertEquals(title, sut.getTitle(), "Book title does not match.");
-        assertEquals(author, sut.getAuthor(), "Book author does not match.");
-        assertEquals(isbn, sut.getIsbn(), "Book ISBN does not match.");
-        assertEquals(year, sut.getYear(), "Book year does not match.");
+        assertEquals(title, sut.getTitle(), "title does not match.");
+        assertEquals(author, sut.getAuthor(), "author does not match.");
+        assertEquals(isbn, sut.getIsbn(), "ISBN does not match.");
+        assertEquals(year, sut.getYear(), "year does not match.");
     }
 }
