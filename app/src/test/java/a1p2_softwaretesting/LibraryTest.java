@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 
@@ -30,10 +31,11 @@ public void testRemoveBook() {
     var sut = new Library();
 
     Book mockBook = mock(Book.class);
+    when(mockBook.getTitle()).thenReturn("Test Title"); // Stub the getTitle method
     sut.addBook(mockBook); // Add book first for removal
 
     // Act
-    var removedBook = sut.removeBook("Test Title"); // Remove the book by title
+    Book removedBook = sut.removeBook("Test Title"); // Remove the book by title
 
     // Assert that the removed book is the same as the mock book
     assertEquals(mockBook, removedBook, "The removed book is not the mockBook."); 
