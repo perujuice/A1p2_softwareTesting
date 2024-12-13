@@ -22,7 +22,7 @@ jacocoTestReport {
     reports {
         xml.required = true
         csv.required = false
-        html.outputLocation = project.file("jacocoHtml")
+        html.outputLocation = project.file("javacocoHtml")
     }
 }
 
