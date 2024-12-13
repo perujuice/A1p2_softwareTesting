@@ -10,38 +10,60 @@ import org.junit.jupiter.api.Test;
 
 public class LibraryTest {
 
-@Test
-public void testAddBook() {
+    @Test
+    public void testAddBook() {
 
-    var sut = new Library();
+        var sut = new Library();
 
-    Book mockBook = mock(Book.class);
+        Book mockBook = mock(Book.class);
 
-    // Act
-    sut.addBook(mockBook);
+        // Act
+        sut.addBook(mockBook);
 
-    // Assert
-    var retrievedBook = sut.has(mockBook);
-    assertNotNull(retrievedBook, "Book was not added to the library.");
-    assertEquals(mockBook, retrievedBook, "The book returned by has is not the mockBook."); // Assert it matches mockBook.
-}
+        // Assert
+        var retrievedBook = sut.has(mockBook);
+        assertNotNull(retrievedBook, "Book was not added to the library.");
+        assertEquals(mockBook, retrievedBook, "The book returned by has is not the mockBook."); // Assert it matches
+                                                                                                // mockBook.
+    }
 
-@Test
-public void testRemoveBook() {
-    var sut = new Library();
+    @Test
+    public void testRemoveBook() {
+        var sut = new Library();
 
-    Book mockBook = mock(Book.class);
-    when(mockBook.getTitle()).thenReturn("Test Title"); // Stub the getTitle method
-    sut.addBook(mockBook); // Add book first for removal
+        Book mockBook = mock(Book.class);
+        when(mockBook.getTitle()).thenReturn("Test Title"); // Stub the getTitle method
+        sut.addBook(mockBook); // Add book first for removal
 
-    // Act
-    Book removedBook = sut.removeBook("Test Title"); // Remove the book by title
+        // Act
+        Book removedBook = sut.removeBook("Test Title"); // Remove the book by title
 
-    // Assert that the removed book is the same as the mock book
-    assertEquals(mockBook, removedBook, "The removed book is not the mockBook."); 
+        // Assert that the removed book is the same as the mock book
+        assertEquals(mockBook, removedBook, "The removed book is not the mockBook.");
 
-    // Assert that the book is no longer in the library (retrievedBook should be null)
-    var retrievedBook = sut.has(mockBook);
-    assertNull(retrievedBook, "The book was not removed correctly.");
-}
+        // Assert that the book is no longer in the library (retrievedBook should be
+        // null)
+        var retrievedBook = sut.has(mockBook);
+        assertNull(retrievedBook, "The book was not removed correctly.");
+    }
+
+    @Test
+    public void testAddMember() {
+        var sut = new Library();
+
+        // Create a mock member
+        Member mockMember = mock(Member.class);
+        when(mockMember.getName()).thenReturn("Test Name"); // Stub getName method
+        when(mockMember.getId()).thenReturn("12345"); // Stub getId method
+
+        // Act
+        sut.addMember(mockMember); // Add the mock member to the library
+
+        // Assert
+        var retrievedMember = sut.hasMember(mockMember); // Check if the member exists in the library
+        assertNotNull(retrievedMember, "Member was not added to the library.");
+        assertEquals(mockMember, retrievedMember, "The member returned by hasMember is not the mockMember."); // Assert
+                                                                                                             
+    }
+
 }

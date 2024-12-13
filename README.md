@@ -27,7 +27,7 @@ Library Management System (LMS)
 **Classes:**
 
 - Book: Represents a book with attributes like title, author, and ISBN.
-- Member: Represents a library member with attributes like name and ID.
+- Member: Represents a library member with attributes like name and ID. 
 - Loan: Handles borrowing and returning books.
 - Library: Manages the collection of books and members.
 

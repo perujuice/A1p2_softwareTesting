@@ -35,4 +35,14 @@ public class Library {
     return null;
   }
 
+  public void addMember(Member mockMember) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'addMember'");
+  }
+
+  public Object hasMember(Member mockMember) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'hasMember'");
+  }
+
 }
