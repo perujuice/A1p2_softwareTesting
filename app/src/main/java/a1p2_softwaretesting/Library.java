@@ -6,9 +6,13 @@ import java.util.List;
 public class Library {
 
   private List<Book> books;
+  private List<Member> members;
+
 
   public Library() {
     this.books = new ArrayList<>();
+    this.members = new ArrayList<>();
+
   }
 
   // Add a book to the library
@@ -36,13 +40,14 @@ public class Library {
   }
 
   public void addMember(Member mockMember) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'addMember'");
+    members.add(mockMember);
   }
 
   public Object hasMember(Member mockMember) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'hasMember'");
+    if (members.contains(mockMember)) {
+      return mockMember;
+    }
+    return null;
   }
 
 }
