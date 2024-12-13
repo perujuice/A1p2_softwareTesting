@@ -30,13 +30,13 @@ public class Library {
 
   public Book removeBook(String title) {
     // Find the book by title
-<span class="pc bpc" id="L33" title="1 of 2 branches missed.">    for (Book book : books) {</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">    for (Book book : books) {</span>
 <span class="pc bpc" id="L34" title="1 of 2 branches missed.">      if (book.getTitle().equals(title)) {</span>
 <span class="fc" id="L35">        books.remove(book); </span>
 <span class="fc" id="L36">        return book; </span>
       }
 <span class="nc" id="L38">    }</span>
-<span class="nc" id="L39">    return null;</span>
+<span class="fc" id="L39">    return null;</span>
   }
 
   public void addMember(Member mockMember) {
@@ -44,10 +44,10 @@ public class Library {
 <span class="fc" id="L44">  }</span>
 
   public Object hasMember(Member mockMember) {
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">    if (members.contains(mockMember)) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">    if (members.contains(mockMember)) {</span>
 <span class="fc" id="L48">      return mockMember;</span>
     }
-<span class="nc" id="L50">    return null;</span>
+<span class="fc" id="L50">    return null;</span>
   }
 
 }

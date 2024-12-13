@@ -102,4 +102,17 @@ public class LibraryViewTest {
     
         verify(outStreamMock).print("Enter the ISBN of the book: ");
     }
+
+    @Test
+    public void shouldPromptForBookYear() {
+        String simulatedInput = "2021";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); 
+        PrintStream outStreamMock = mock(PrintStream.class);
+    
+        var sut = new LibraryView(outStreamMock);
+    
+        sut.promptForBookYear();
+    
+        verify(outStreamMock).print("Enter the year of the book: ");
+    }
 }
