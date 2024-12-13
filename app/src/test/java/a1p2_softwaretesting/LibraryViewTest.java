@@ -54,7 +54,7 @@ public class LibraryViewTest {
     @Test
     public void shouldPromptForRemovingBook() {
         String simulatedInput = "Test Book Title";
-        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); // Set simulated input.
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); 
         PrintStream outStreamMock = mock(PrintStream.class);
     
         var sut = new LibraryView(outStreamMock);
@@ -64,4 +64,42 @@ public class LibraryViewTest {
         verify(outStreamMock).print("Enter the title of the book: ");
     }
     
+    @Test
+    public void shouldPromptForBookTitle() {
+        String simulatedInput = "Test Book Title";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); 
+        PrintStream outStreamMock = mock(PrintStream.class);
+    
+        var sut = new LibraryView(outStreamMock);
+    
+        sut.promptForBookTitle();
+    
+        verify(outStreamMock).print("Enter the title of the book: ");
+    }
+
+    @Test
+    public void shouldPromptForBookAuthor() {
+        String simulatedInput = "Test Book Author";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); 
+        PrintStream outStreamMock = mock(PrintStream.class);
+    
+        var sut = new LibraryView(outStreamMock);
+    
+        sut.promptForBookAuthor();
+    
+        verify(outStreamMock).print("Enter the author of the book: ");
+    }
+
+    @Test
+    public void shouldPromptForBookIsbn() {
+        String simulatedInput = "Test Book ISBN";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes())); 
+        PrintStream outStreamMock = mock(PrintStream.class);
+    
+        var sut = new LibraryView(outStreamMock);
+    
+        sut.promptForBookIsbn();
+    
+        verify(outStreamMock).print("Enter the ISBN of the book: ");
+    }
 }

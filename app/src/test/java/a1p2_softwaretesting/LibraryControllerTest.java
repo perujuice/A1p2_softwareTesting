@@ -33,22 +33,18 @@ public class LibraryControllerTest {
 
     @Test
     public void shouldCallRemoveBookWhenOption2IsSelected() {
-    var libraryMock = mock(Library.class);
-    var viewMock = mock(LibraryView.class);
-    var sut = new LibraryController(libraryMock, viewMock);
-    
-    Book mockBook = mock(Book.class);
-    when(viewMock.promptForBookTitle()).thenReturn("Test Title");
-    libraryMock.addBook(mockBook);
+        var libraryMock = mock(Library.class);
+        var viewMock = mock(LibraryView.class);
+        var sut = new LibraryController(libraryMock, viewMock);
+        
+        Book mockBook = mock(Book.class);
+        when(viewMock.promptForBookTitle()).thenReturn("Test Title");
+        libraryMock.addBook(mockBook);
 
-    // Act
-    sut.handleUserInput("2");
+        sut.handleUserInput("2");
 
-        // Assert
-    verify(viewMock).promptForBookTitle();  // Ensure the title was prompted
-    verify(libraryMock).removeBook(any(String.class));
-    
-
-}
+        verify(viewMock).promptForBookTitle(); 
+        verify(libraryMock).removeBook(any(String.class));
+    }
 
 }
