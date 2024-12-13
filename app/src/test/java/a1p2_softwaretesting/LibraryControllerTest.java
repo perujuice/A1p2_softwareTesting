@@ -32,7 +32,7 @@ public class LibraryControllerTest {
     }  
 
     @Test
-public void shouldCallRemoveBookWhenOption2IsSelected() {
+    public void shouldCallRemoveBookWhenOption2IsSelected() {
     var libraryMock = mock(Library.class);
     var viewMock = mock(LibraryView.class);
     var sut = new LibraryController(libraryMock, viewMock);

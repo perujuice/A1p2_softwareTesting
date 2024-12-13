@@ -43,8 +43,17 @@ public class LibraryController {
         library.addBook(book);
     }
 
+     /*
+     * Remove a book from the library based on user input.
+     */
     private void removeBook() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeBook'");
+        String title = view.promptForBookTitle();
+        
+        Book removedBook = library.removeBook(title);
+        if (removedBook != null) {
+            System.out.println("Book removed successfully. Removed book details: " + removedBook); 
+        } else {
+            System.out.println("Book removal failed. Book not found.");
+        }
     }
 }
