@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Library.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">a1p2_softwaretesting</a> &gt; <span class="el_source">Library.java</span></div><h1>Library.java</h1><pre class="source lang-java linenums">package a1p2_softwaretesting;
 
-<span class="fc" id="L3">public class Library {</span>
+import java.util.ArrayList;
+import java.util.List;
 
-    public void addBook(Book any) {
-        // TODO Auto-generated method stub
-<span class="nc" id="L7">        throw new UnsupportedOperationException(&quot;Unimplemented method 'addBook'&quot;);</span>
+public class Library {
+
+  private List&lt;Book&gt; books;
+
+<span class="fc" id="L10">  public Library() {</span>
+<span class="fc" id="L11">    this.books = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">  }</span>
+
+  // Add a book to the library
+  public void addBook(Book newBook) {
+<span class="fc" id="L16">    books.add(newBook);</span>
+<span class="fc" id="L17">  }</span>
+
+  // Check if a book exists in the library
+  public Book has(Book book) {
+<span class="fc bfc" id="L21" title="All 2 branches covered.">    if (books.contains(book)) {</span>
+<span class="fc" id="L22">      return book;</span>
     }
+<span class="fc" id="L24">    return null; </span>
+  }
+
+  public Book removeBook(String title) {
+    // Find the book by title
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">    for (Book book : books) {</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">      if (book.getTitle().equals(title)) {</span>
+<span class="fc" id="L31">        books.remove(book); </span>
+<span class="fc" id="L32">        return book; </span>
+      }
+<span class="nc" id="L34">    }</span>
+<span class="nc" id="L35">    return null;</span>
+  }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

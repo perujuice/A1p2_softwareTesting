@@ -16,26 +16,45 @@ public class LibraryController {
      * Handle user input by calling the appropriate method based on the input.
      */
     public void handleUserInput(String input) {
-<span class="fc bfc" id="L19" title="All 2 branches covered.">        switch (input) {</span>
+<span class="fc bfc" id="L19" title="All 3 branches covered.">        switch (input) {</span>
             case &quot;1&quot;:
 <span class="fc" id="L21">                addBook();</span>
 <span class="fc" id="L22">                break;</span>
+            case &quot;2&quot;:
+<span class="fc" id="L24">                removeBook();</span>
+<span class="fc" id="L25">                break;            </span>
             default:
                 break;
         }
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L29">    }</span>
+
+
 
 
     /*
      * Add a book to the library, by prompting the user for the book's title, author, ISBN, and year.
      */
     private void addBook() {
-<span class="fc" id="L33">        String title = view.promptForBookTitle();</span>
-<span class="fc" id="L34">        String author = view.promptForBookAuthor();</span>
-<span class="fc" id="L35">        String isbn = view.promptForBookIsbn();</span>
-<span class="fc" id="L36">        String year = view.promptForBookYear();</span>
-<span class="fc" id="L37">        Book book = new Book(title, author, isbn, year);</span>
-<span class="fc" id="L38">        library.addBook(book);</span>
-<span class="fc" id="L39">    }</span>
+<span class="fc" id="L38">        String title = view.promptForBookTitle();</span>
+<span class="fc" id="L39">        String author = view.promptForBookAuthor();</span>
+<span class="fc" id="L40">        String isbn = view.promptForBookIsbn();</span>
+<span class="fc" id="L41">        String year = view.promptForBookYear();</span>
+<span class="fc" id="L42">        Book book = new Book(title, author, isbn, year);</span>
+<span class="fc" id="L43">        library.addBook(book);</span>
+<span class="fc" id="L44">    }</span>
+
+     /*
+     * Remove a book from the library based on user input.
+     */
+    private void removeBook() {
+<span class="fc" id="L50">        String title = view.promptForBookTitle();</span>
+        
+<span class="fc" id="L52">        Book removedBook = library.removeBook(title);</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (removedBook != null) {</span>
+<span class="nc" id="L54">            System.out.println(&quot;Book removed successfully. Removed book details: &quot; + removedBook); </span>
+        } else {
+<span class="fc" id="L56">            System.out.println(&quot;Book removal failed. Book not found.&quot;);</span>
+        }
+<span class="fc" id="L58">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
