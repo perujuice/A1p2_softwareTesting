@@ -115,4 +115,31 @@ public class LibraryViewTest {
     
         verify(outStreamMock).print("Enter the year of the book: ");
     }
+
+    @Test
+    public void shouldDisplayBookRemovedSuccessfullyMessage() {
+        String removedBook = "Test Book Title";
+        PrintStream outStreamMock = mock(PrintStream.class);
+        
+        var sut = new LibraryView(outStreamMock);
+        
+        // Simulate the action of removing a book
+        sut.displayBookRemovalResult(true, removedBook);
+        
+        
+        verify(outStreamMock).println("Book removed successfully. Removed book details: " + removedBook);
+    }
+    
+    @Test
+    public void shouldDisplayBookRemovalFailedMessage() {
+        String removedBook = "Nonexistent Book";
+        PrintStream outStreamMock = mock(PrintStream.class);
+        
+        var sut = new LibraryView(outStreamMock);
+        
+        sut.displayBookRemovalResult(false, removedBook);
+        
+        verify(outStreamMock).println("Book removal failed. Book not found.");
+    }
+    
 }
