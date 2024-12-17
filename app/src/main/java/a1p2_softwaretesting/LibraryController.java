@@ -50,10 +50,11 @@ public class LibraryController {
         String title = view.promptForBookTitle();
         
         Book removedBook = library.removeBook(title);
+    
         if (removedBook != null) {
-            System.out.println("Book removed successfully. Removed book details: " + removedBook); 
+            view.displayBookRemovalResult(true, removedBook.toString());
         } else {
-            System.out.println("Book removal failed. Book not found.");
+            view.displayBookRemovalResult(false, title);
         }
     }
 }
