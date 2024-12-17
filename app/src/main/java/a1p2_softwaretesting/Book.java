@@ -1,6 +1,5 @@
 package a1p2_softwaretesting;
 
-import java.util.function.BooleanSupplier;
 
 public class Book {
 
@@ -8,6 +7,10 @@ public class Book {
     private String author;
     private String isbn;
     private String year;
+    private boolean loaned = false; // New field to track loan status
+
+        
+
 
     public Book(String title, String author, String isbn, String year) {
         this.title = title;
@@ -32,13 +35,12 @@ public class Book {
         return year;
     }
 
-    public BooleanSupplier isLoaned() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isLoaned'");
-    }
 
+    public boolean isLoaned() {
+        return loaned; 
+    }
+    
     public void toggleLoanedStatus() {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'toggleLoanedStatus'");
+        loaned = !loaned; 
     }
 }
