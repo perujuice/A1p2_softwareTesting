@@ -88,4 +88,17 @@ public class LibraryView {
         outStream.print("Enter the year of the book: ");
         return scanner.nextLine();
     }
+
+    /*
+    * Display the result of a book removal operation.
+    */
+    public void displayBookRemovalResult(boolean success, String removedBook) {
+
+        if (success) {
+            outStream.println("Book removed successfully. Removed book details: " + removedBook);
+        } else {
+            outStream.println("Book removal failed. Book not found.");
+        }
+    }
+
 }
