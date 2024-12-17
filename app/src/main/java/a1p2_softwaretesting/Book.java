@@ -1,5 +1,7 @@
 package a1p2_softwaretesting;
 
+import java.util.function.BooleanSupplier;
+
 public class Book {
 
     private String title;
@@ -28,5 +30,15 @@ public class Book {
 
     public String getYear() {
         return year;
+    }
+
+    public BooleanSupplier isLoaned() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isLoaned'");
+    }
+
+    public void toggleLoanedStatus() {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'toggleLoanedStatus'");
     }
 }

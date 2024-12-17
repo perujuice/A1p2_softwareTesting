@@ -50,11 +50,12 @@ public class LibraryController {
 <span class="fc" id="L50">        String title = view.promptForBookTitle();</span>
         
 <span class="fc" id="L52">        Book removedBook = library.removeBook(title);</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (removedBook != null) {</span>
-<span class="nc" id="L54">            System.out.println(&quot;Book removed successfully. Removed book details: &quot; + removedBook); </span>
+    
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (removedBook != null) {</span>
+<span class="nc" id="L55">            view.displayBookRemovalResult(true, removedBook.toString());</span>
         } else {
-<span class="fc" id="L56">            System.out.println(&quot;Book removal failed. Book not found.&quot;);</span>
+<span class="fc" id="L57">            view.displayBookRemovalResult(false, title);</span>
         }
-<span class="fc" id="L58">    }</span>
+<span class="fc" id="L59">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

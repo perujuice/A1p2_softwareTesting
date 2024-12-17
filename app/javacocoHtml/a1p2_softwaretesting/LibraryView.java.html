@@ -88,5 +88,18 @@ public class LibraryView {
 <span class="fc" id="L88">        outStream.print(&quot;Enter the year of the book: &quot;);</span>
 <span class="fc" id="L89">        return scanner.nextLine();</span>
     }
+
+    /*
+    * Display the result of a book removal operation.
+    */
+    public void displayBookRemovalResult(boolean success, String removedBook) {
+
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (success) {</span>
+<span class="fc" id="L98">            outStream.println(&quot;Book removed successfully. Removed book details: &quot; + removedBook);</span>
+        } else {
+<span class="fc" id="L100">            outStream.println(&quot;Book removal failed. Book not found.&quot;);</span>
+        }
+<span class="fc" id="L102">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
