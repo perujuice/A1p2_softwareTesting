@@ -104,13 +104,15 @@ public class LibraryView {
     * Display a list of books.
     */
     public void displayBooksList(List&lt;String&gt; books) {
-
+<span class="fc" id="L107">        int index = 1;</span>
 <span class="fc bfc" id="L108" title="All 2 branches covered.">        for (String book : books) {</span>
-<span class="fc" id="L109">            outStream.println(book);</span>
-<span class="fc" id="L110">        }</span>
-<span class="fc" id="L111">        outStream.print(&quot;Please choose an option: &quot;); </span>
-
-<span class="fc" id="L113">        }</span>
+<span class="fc" id="L109">            String formattedBook = index + &quot;. &quot; + book;</span>
+<span class="fc" id="L110">            outStream.println(formattedBook); // Output number + book title</span>
+<span class="fc" id="L111">            index++;</span>
+<span class="fc" id="L112">        }</span>
+<span class="fc" id="L113">        outStream.print(&quot;Please choose an option: &quot;);</span>
+<span class="fc" id="L114">    }</span>
+    
 
 
 }
