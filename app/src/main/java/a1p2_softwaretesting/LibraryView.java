@@ -100,10 +100,17 @@ public class LibraryView {
             outStream.println("Book removal failed. Book not found.");
         }
     }
-
+    /*
+    * Display a list of books.
+    */
     public void displayBooksList(List<String> books) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayBooksList'");
-    }
+
+        for (String book : books) {
+            outStream.println(book);
+        }
+        outStream.print("Please choose an option: "); 
+
+        }
+
 
 }

@@ -142,22 +142,21 @@ public class LibraryViewTest {
         
         verify(outStreamMock).println("Book removal failed. Book not found.");
     }
-
     @Test
-    public void shouldDisplayBooksList(List<String> books) {
+    public void shouldDisplayBooksList() {
         PrintStream outStreamMock = mock(PrintStream.class);
         var sut = new LibraryView(outStreamMock);
-        
-        // Display the list of books
+
+        List<String> books = List.of("Book 1", "Book 2", "Book 3");
+
         sut.displayBooksList(books);
-        
-        // Verify each book in the list is printed
+
         for (String book : books) {
             verify(outStreamMock).println(book);
         }
-        
-        // Optionally verify the final message or prompt if applicable
+
         verify(outStreamMock).print("Please choose an option: ");
     }
+
     
 }
