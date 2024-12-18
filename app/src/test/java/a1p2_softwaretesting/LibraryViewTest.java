@@ -142,21 +142,27 @@ public class LibraryViewTest {
         
         verify(outStreamMock).println("Book removal failed. Book not found.");
     }
-    @Test
+        @Test
     public void shouldDisplayBooksList() {
         PrintStream outStreamMock = mock(PrintStream.class);
         var sut = new LibraryView(outStreamMock);
 
-        List<String> books = List.of("Book 1", "Book 2", "Book 3");
+        List<String> books = List.of("Harry Potter", "Lord of the Rings", "The Hobbit");
 
+        // Execute the method
         sut.displayBooksList(books);
 
+        // Verify each book is printed with the correct numbering
+        int index = 1;
         for (String book : books) {
-            verify(outStreamMock).println(book);
+            verify(outStreamMock).println(index + ". " + book);
+            index++;
         }
 
+        // Verify the final prompt
         verify(outStreamMock).print("Please choose an option: ");
     }
+
 
     
 }

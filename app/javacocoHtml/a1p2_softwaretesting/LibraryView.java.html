@@ -100,6 +100,18 @@ public class LibraryView {
 <span class="fc" id="L100">            outStream.println(&quot;Book removal failed. Book not found.&quot;);</span>
         }
 <span class="fc" id="L102">    }</span>
+    /*
+    * Display a list of books.
+    */
+    public void displayBooksList(List&lt;String&gt; books) {
+
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        for (String book : books) {</span>
+<span class="fc" id="L109">            outStream.println(book);</span>
+<span class="fc" id="L110">        }</span>
+<span class="fc" id="L111">        outStream.print(&quot;Please choose an option: &quot;); </span>
+
+<span class="fc" id="L113">        }</span>
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
