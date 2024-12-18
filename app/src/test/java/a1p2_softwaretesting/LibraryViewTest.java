@@ -6,6 +6,7 @@ import static org.mockito.Mockito.verify;
 
 import java.io.ByteArrayInputStream;
 import java.io.PrintStream;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -140,6 +141,23 @@ public class LibraryViewTest {
         sut.displayBookRemovalResult(false, removedBook);
         
         verify(outStreamMock).println("Book removal failed. Book not found.");
+    }
+
+    @Test
+    public void shouldDisplayBooksList(List<String> books) {
+        PrintStream outStreamMock = mock(PrintStream.class);
+        var sut = new LibraryView(outStreamMock);
+        
+        // Display the list of books
+        sut.displayBooksList(books);
+        
+        // Verify each book in the list is printed
+        for (String book : books) {
+            verify(outStreamMock).println(book);
+        }
+        
+        // Optionally verify the final message or prompt if applicable
+        verify(outStreamMock).print("Please choose an option: ");
     }
     
 }

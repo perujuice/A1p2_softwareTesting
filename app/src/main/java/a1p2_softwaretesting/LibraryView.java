@@ -101,4 +101,9 @@ public class LibraryView {
         }
     }
 
+    public void displayBooksList(List<String> books) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'displayBooksList'");
+    }
+
 }
