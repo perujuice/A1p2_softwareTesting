@@ -27,6 +27,9 @@ public class LibraryController {
             case "2":
                 removeBook();
                 return true;
+            case "5":
+                view.displayBooksList(library.getBooks());
+                return true;
             case "9":
                 // Exit the application
                 return false;
