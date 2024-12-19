@@ -112,6 +112,11 @@ public class LibraryView {
         }
         outStream.print("Please choose an option: ");
     }
+
+    public void displayInvalidInputMessage() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'displayInvalidInputMessage'");
+    }
     
 
 

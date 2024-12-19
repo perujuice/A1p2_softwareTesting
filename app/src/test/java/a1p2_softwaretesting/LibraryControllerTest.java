@@ -47,5 +47,15 @@ public class LibraryControllerTest {
         verify(libraryMock).removeBook(any(String.class));
     }
 
+    @Test
+    void shouldNotifyUserOnInvalidInput() {
+        var libraryMock = mock(Library.class);
+        var viewMock = mock(LibraryView.class);
+        var sut = new LibraryController(libraryMock, viewMock);
+
+        sut.handleUserInput("invalid input");
+
+        verify(viewMock).displayInvalidInputMessage();
+    }
 
 }
