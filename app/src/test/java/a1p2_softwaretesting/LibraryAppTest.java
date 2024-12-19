@@ -1,6 +1,7 @@
 package a1p2_softwaretesting;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.inOrder;
@@ -45,6 +46,30 @@ public class LibraryAppTest {
         verify(viewMock).displayWelcomeMessage();
         verify(controllerMock).handleUserInput("1");
     }
+
+    @Test
+    public void appShouldContinueRunningUntilUserExits() {
+        var viewMock = mock(LibraryView.class);
+        var controllerMock = mock(LibraryController.class);
+        var sut = new LibraryApp(viewMock, controllerMock);
+
+        when(viewMock.getUserInput()).thenReturn("1", "2", "9");
+        when(controllerMock.handleUserInput("1")).thenReturn(true);
+        when(controllerMock.handleUserInput("2")).thenReturn(true);
+        when(controllerMock.handleUserInput("9")).thenReturn(false);
+
+        sut.start();
+
+        // verify that the welcome message is displayed once
+        verify(viewMock).displayWelcomeMessage();
+        // verify that the menu is displayed three times
+        verify(viewMock, times(3)).displayConsoleMenu();
+        // verify that the user input is captured three times with the correct values.
+        verify(controllerMock).handleUserInput("1");
+        verify(controllerMock).handleUserInput("2");
+        verify(controllerMock).handleUserInput("9");
+    }
+
 
     @Test
     public void testLibraryAppMain() {
