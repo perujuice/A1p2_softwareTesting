@@ -31,7 +31,7 @@ public class LibraryController {
                 // Exit the application
                 return false;
             default:
-                // throw new IllegalArgumentException("Invalid input: " + input);
+                view.displayInvalidInputMessage();
                 return true;
         }
     }
