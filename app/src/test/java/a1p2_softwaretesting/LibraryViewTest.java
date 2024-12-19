@@ -142,7 +142,9 @@ public class LibraryViewTest {
         
         verify(outStreamMock).println("Book removal failed. Book not found.");
     }
-        @Test
+
+    
+    @Test
     public void shouldDisplayBooksList() {
         PrintStream outStreamMock = mock(PrintStream.class);
         var sut = new LibraryView(outStreamMock);

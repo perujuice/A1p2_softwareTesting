@@ -1,6 +1,7 @@
 package a1p2_softwaretesting;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -46,6 +47,19 @@ public class LibraryControllerTest {
         verify(viewMock).promptForBookTitle(); 
         verify(libraryMock).removeBook(any(String.class));
     }
+
+
+    @Test
+    void shouldCallListBooksWhenOption5IsSelected() {
+        var libraryMock = mock(Library.class);
+        var viewMock = mock(LibraryView.class);
+        var sut = new LibraryController(libraryMock, viewMock);
+
+        sut.handleUserInput("5");
+
+        verify(viewMock).displayBooksList(anyList());
+    }
+
 
     @Test
     void shouldNotifyUserOnInvalidInput() {
