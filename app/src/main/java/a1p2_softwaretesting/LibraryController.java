@@ -15,16 +15,18 @@ public class LibraryController {
     /*
      * Handle user input by calling the appropriate method based on the input.
      */
-    public void handleUserInput(String input) {
+    public boolean handleUserInput(String input) {
         switch (input) {
             case "1":
                 addBook();
-                break;
+                return true;
             case "2":
                 removeBook();
-                break;            
+                return true;
+            case "9":
+                return false;
             default:
-                break;
+                return true;
         }
     }
 

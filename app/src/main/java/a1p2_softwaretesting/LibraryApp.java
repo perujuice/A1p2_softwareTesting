@@ -11,9 +11,12 @@ public class LibraryApp {
 
     public void start() {
         this.view.displayWelcomeMessage();
-        this.view.displayConsoleMenu();
-        String userInput = this.view.getUserInput();
-        this.controller.handleUserInput(userInput); 
+        boolean running = true;
+        while (running) {
+            this.view.displayConsoleMenu();
+            String userInput = this.view.getUserInput();
+            running = this.controller.handleUserInput(userInput); 
+        }
     }
 
     public static void main(String[] args) {
