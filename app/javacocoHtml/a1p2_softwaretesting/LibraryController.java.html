@@ -4,58 +4,69 @@ public class LibraryController {
     private Library library;
     private LibraryView view;
 
-    /*
+    /**
      * Constructor for the LibraryController class.
+     * @param library 
+     * @param view
      */
-<span class="fc" id="L10">    public LibraryController(Library library, LibraryView view) {</span>
-<span class="fc" id="L11">        this.library = library;</span>
-<span class="fc" id="L12">        this.view = view;</span>
-<span class="fc" id="L13">    }</span>
+<span class="fc" id="L12">    public LibraryController(Library library, LibraryView view) {</span>
+<span class="fc" id="L13">        this.library = library;</span>
+<span class="fc" id="L14">        this.view = view;</span>
+<span class="fc" id="L15">    }</span>
 
-    /*
-     * Handle user input by calling the appropriate method based on the input.
+    /**
+     * Handle user input based on the input received.
+     * @param input The user input.
+     * @return True if the application should continue running, false otherwise.
      */
-    public void handleUserInput(String input) {
-<span class="fc bfc" id="L19" title="All 3 branches covered.">        switch (input) {</span>
+    public boolean handleUserInput(String input) {
+<span class="fc bfc" id="L23" title="All 5 branches covered.">        switch (input) {</span>
             case &quot;1&quot;:
-<span class="fc" id="L21">                addBook();</span>
-<span class="fc" id="L22">                break;</span>
+<span class="fc" id="L25">                addBook();</span>
+<span class="fc" id="L26">                return true;</span>
             case &quot;2&quot;:
-<span class="fc" id="L24">                removeBook();</span>
-<span class="fc" id="L25">                break;            </span>
+<span class="fc" id="L28">                removeBook();</span>
+<span class="fc" id="L29">                return true;</span>
+            case &quot;5&quot;:
+<span class="fc" id="L31">                view.displayBooksList(library.getBooks());</span>
+<span class="fc" id="L32">                return true;</span>
+            case &quot;9&quot;:
+                // Exit the application
+<span class="fc" id="L35">                return false;</span>
             default:
-                break;
+<span class="fc" id="L37">                view.displayInvalidInputMessage();</span>
+<span class="fc" id="L38">                return true;</span>
         }
-<span class="fc" id="L29">    }</span>
+    }
 
 
 
 
-    /*
-     * Add a book to the library, by prompting the user for the book's title, author, ISBN, and year.
+    /**
+     * Add a book to the library based on user input.
      */
     private void addBook() {
-<span class="fc" id="L38">        String title = view.promptForBookTitle();</span>
-<span class="fc" id="L39">        String author = view.promptForBookAuthor();</span>
-<span class="fc" id="L40">        String isbn = view.promptForBookIsbn();</span>
-<span class="fc" id="L41">        String year = view.promptForBookYear();</span>
-<span class="fc" id="L42">        Book book = new Book(title, author, isbn, year);</span>
-<span class="fc" id="L43">        library.addBook(book);</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L49">        String title = view.promptForBookTitle();</span>
+<span class="fc" id="L50">        String author = view.promptForBookAuthor();</span>
+<span class="fc" id="L51">        String isbn = view.promptForBookIsbn();</span>
+<span class="fc" id="L52">        String year = view.promptForBookYear();</span>
+<span class="fc" id="L53">        Book book = new Book(title, author, isbn, year);</span>
+<span class="fc" id="L54">        library.addBook(book);</span>
+<span class="fc" id="L55">    }</span>
 
-     /*
+    /**
      * Remove a book from the library based on user input.
      */
     private void removeBook() {
-<span class="fc" id="L50">        String title = view.promptForBookTitle();</span>
+<span class="fc" id="L61">        String title = view.promptForBookTitle();</span>
         
-<span class="fc" id="L52">        Book removedBook = library.removeBook(title);</span>
+<span class="fc" id="L63">        Book removedBook = library.removeBook(title);</span>
     
-<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (removedBook != null) {</span>
-<span class="nc" id="L55">            view.displayBookRemovalResult(true, removedBook.toString());</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        if (removedBook != null) {</span>
+<span class="nc" id="L66">            view.displayBookRemovalResult(true, removedBook.toString());</span>
         } else {
-<span class="fc" id="L57">            view.displayBookRemovalResult(false, title);</span>
+<span class="fc" id="L68">            view.displayBookRemovalResult(false, title);</span>
         }
-<span class="fc" id="L59">    }</span>
+<span class="fc" id="L70">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

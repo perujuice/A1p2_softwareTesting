@@ -43,5 +43,14 @@ public class Book {
     public void toggleLoanedStatus() {
 <span class="fc bfc" id="L44" title="All 2 branches covered.">        loaned = !loaned; </span>
 <span class="fc" id="L45">    }</span>
+
+
+    /**
+     * Return a string representation of the book.
+     */
+    @Override
+    public String toString() {
+<span class="nc" id="L53">        return title + &quot; by &quot; + author + &quot; (&quot; + year + &quot;) - ISBN: &quot; + isbn;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

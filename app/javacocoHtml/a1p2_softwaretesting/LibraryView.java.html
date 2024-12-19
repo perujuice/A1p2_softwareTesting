@@ -112,8 +112,12 @@ public class LibraryView {
 <span class="fc" id="L112">        }</span>
 <span class="fc" id="L113">        outStream.print(&quot;Please choose an option: &quot;);</span>
 <span class="fc" id="L114">    }</span>
-    
 
-
+    /**
+     * Display invalid input message for options other than 1 to 9.
+     */
+    public void displayInvalidInputMessage() {
+<span class="nc" id="L120">        outStream.println(&quot;\nInvalid input. Please try again.&quot;);</span>
+<span class="nc" id="L121">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

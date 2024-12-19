@@ -17,7 +17,7 @@ Library Management System (LMS)
 
 *The last command will show the code coverage results in the browser* 
 
-![alt text](image.png)
+![alt text](coverage.png)
 
 
 ## Application Idea:
