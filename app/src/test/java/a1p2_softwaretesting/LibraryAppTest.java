@@ -74,7 +74,6 @@ public class LibraryAppTest {
 
     @Test
     public void testLibraryAppMain() {
-        // Arrange
         String simulatedInput = "9\n"; // Simulate user input to exit immediately
         System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
 
@@ -82,15 +81,14 @@ public class LibraryAppTest {
         PrintStream originalOutStream = System.out; // Save the original output stream
         System.setOut(outStreamMock); // Set the output stream to the mock object
 
-        // Act
         LibraryApp.main(new String[0]);
 
-        // Assert
+
         verify(outStreamMock).println("Welcome to the Library!"); // Verify that the welcome message was printed
         verify(outStreamMock).println("Library Management System Menu:"); // Verify that the menu was printed
         verify(outStreamMock).print("Please choose an option: "); // Verify that the prompt was printed
 
-        // Reset the output stream
+
         System.setOut(originalOutStream);
     }
 }
