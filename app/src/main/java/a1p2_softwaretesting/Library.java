@@ -50,9 +50,16 @@ public class Library {
     return null;
   }
 
+  /**
+   * Get a list of all books in the library.
+   * @return A list of all books in the library.
+   */
   public List<String> getBooks() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getBooks'");
+    List<String> bookList = new ArrayList<>();
+    for (Book book : books) {
+      bookList.add(book.toString());
+    }
+    return bookList;
   }
 
 }

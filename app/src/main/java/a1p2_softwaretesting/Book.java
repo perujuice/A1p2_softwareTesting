@@ -43,4 +43,13 @@ public class Book {
     public void toggleLoanedStatus() {
         loaned = !loaned; 
     }
+
+
+    /**
+     * Return a string representation of the book.
+     */
+    @Override
+    public String toString() {
+        return title + " by " + author + " (" + year + ") - ISBN: " + isbn;
+    }
 }
