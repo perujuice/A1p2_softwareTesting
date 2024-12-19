@@ -53,6 +53,7 @@ public class LibraryAppTest {
         var controllerMock = mock(LibraryController.class);
         var sut = new LibraryApp(viewMock, controllerMock);
 
+        // Simulate user input to select options 1, 2, and 9
         when(viewMock.getUserInput()).thenReturn("1", "2", "9");
         when(controllerMock.handleUserInput("1")).thenReturn(true);
         when(controllerMock.handleUserInput("2")).thenReturn(true);

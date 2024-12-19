@@ -4,16 +4,20 @@ public class LibraryController {
     private Library library;
     private LibraryView view;
 
-    /*
+    /**
      * Constructor for the LibraryController class.
+     * @param library 
+     * @param view
      */
     public LibraryController(Library library, LibraryView view) {
         this.library = library;
         this.view = view;
     }
 
-    /*
-     * Handle user input by calling the appropriate method based on the input.
+    /**
+     * Handle user input based on the input received.
+     * @param input The user input.
+     * @return True if the application should continue running, false otherwise.
      */
     public boolean handleUserInput(String input) {
         switch (input) {
@@ -24,8 +28,10 @@ public class LibraryController {
                 removeBook();
                 return true;
             case "9":
+                // Exit the application
                 return false;
             default:
+                // throw new IllegalArgumentException("Invalid input: " + input);
                 return true;
         }
     }
@@ -33,8 +39,8 @@ public class LibraryController {
 
 
 
-    /*
-     * Add a book to the library, by prompting the user for the book's title, author, ISBN, and year.
+    /**
+     * Add a book to the library based on user input.
      */
     private void addBook() {
         String title = view.promptForBookTitle();
@@ -45,7 +51,7 @@ public class LibraryController {
         library.addBook(book);
     }
 
-     /*
+    /**
      * Remove a book from the library based on user input.
      */
     private void removeBook() {
