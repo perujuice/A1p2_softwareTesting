@@ -83,4 +83,19 @@ public class LibraryTest {
         var retrievedMember = sut.hasMember(mockMember); // Check if the member exists in the library
         assertNull(retrievedMember, "The member should not exist in the library.");
     }
+
+    @Test
+    void getBooksShouldReturnAListofCurrentBook()
+    {
+        var sut = new Library();
+
+        Book mockBook = mock(Book.class);
+        when(mockBook.toString()).thenReturn("Test Book"); // Stub the toString method
+        sut.addBook(mockBook); // Add the mock book to the library
+
+        var bookList = sut.getBooks(); // Get the list of books in the library
+
+        assertEquals(1, bookList.size(), "The book list should have one book.");
+        assertEquals("Test Book", bookList.get(0), "The book in the list should be the mock book.");
+    }
 }
