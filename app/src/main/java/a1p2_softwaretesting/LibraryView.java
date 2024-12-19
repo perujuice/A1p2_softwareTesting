@@ -113,11 +113,10 @@ public class LibraryView {
         outStream.print("Please choose an option: ");
     }
 
+    /**
+     * Display invalid input message for options other than 1 to 9.
+     */
     public void displayInvalidInputMessage() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayInvalidInputMessage'");
+        outStream.println("\nInvalid input. Please try again.");
     }
-    
-
-
 }
